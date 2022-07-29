@@ -1,5 +1,9 @@
 import React,{ Component } from 'react';
 import Projects from './Projects';
+import SocialProfiles  from './SocialProfiles';
+import profile from '../assets/profile.png';
+import Title from './Title';
+import Jokes from './Jokes';
 
 // class RegularClass{}
 // class ComponentClass extends Component{}
@@ -20,8 +24,10 @@ class App extends Component {
     render(){
         return(
             <div>
+                <img src={profile} alt='profile' className="profile"/>
                 <h1>Hello</h1>
                 <p> My name is Jhon</p>
+                {this.state.displayBio? <Title/>: null}
                 <p>I'm looking for someone</p>
                 {
                     this.state.displayBio ? (
@@ -36,8 +42,12 @@ class App extends Component {
                         <button onClick={this.toggleDisplayBio}>Show More</button>
                     </div>
                 }
-                <hr/>
+                <hr/>    
                 <Projects/>
+                <hr/>
+                <SocialProfiles/>
+                <hr/>
+                <Jokes/>
             </div>
             
             
